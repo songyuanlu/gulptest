@@ -3,7 +3,7 @@ var version = '1.1.2'
 var gulp = require('gulp');
 
 var $ = require('gulp-load-plugins')({
-    pattern: ['gulp-*','multi-sprite']
+    pattern: ['gulp-*','multi-sprite', 'amd-optimize']
 });
 
 var browserSync = require('browser-sync').create();
@@ -167,4 +167,14 @@ gulp.task('default', function () {
     return gulp.src(root.src+'css/**/*.css')
         .pipe($.rev())
         .pipe(gulp.dest('dist'));
+});
+
+gulp.task('scripts', function () {
+ 
+  return gulp.src(root.src+'js/**/*.js')
+    // Traces all modules and outputs them in the correct order. 
+    .pipe($.amdOptimize("main"))
+    .pipe(concat("main.js"))
+    .pipe(gulp.dest("dist/scripts"));
+ 
 });
