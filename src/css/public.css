@@ -39,11 +39,17 @@
   background: #fff;
 }
 /** 公共头样式 */
-.header {
+.ui-loading {
   background: #fff;
 }
-.nav {
-  background-color: #fff;
+.ui-header {
+  background: #fff;
+}
+.login-form {
+  background: #fff;
+}
+.reg-list {
+  background: #fff;
 }
 /** 公共底样式 */
 .footer {
