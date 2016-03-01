@@ -1,18 +1,12 @@
-({
-    appDir: './',
+{
     baseUrl: 'js',
-    dir: '../dest',
-    paths: {
-        jquery: 'empty:',
-        wx: 'empty:',
-        header: 'units/header'
-    },
-    optimizeCss: 'none',
-    // fileExclusionRegExp: 
+    dir: '../dist/js',
+    optimize: 'uglify',
+    mainConfigFile: 'js/require.config.js',
+    removeCombined: true,
     modules: [
         {
-            name: 'main'
+            name: 'index'
         }
     ]
-})
-
+}

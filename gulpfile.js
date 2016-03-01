@@ -170,15 +170,15 @@ gulp.task('default', function () {
 });
 
 
-gulp.task('bundle', function () {
+gulp.task('jsBuild', function () {
     gulp.src(root.src+'js/**/*.js')
-    .pipe($.amdOptimize('main/main', {
+    .pipe($.amdOptimize('index', {
         configFile: root.src+'js/require.config.js',
-        exclude: ['jquery']
+        exclude: ['jquery'],
         // findNestedDependencies: true,
-        // include: false
+        include: ['header']
     }))
-    .pipe($.concat('main/main.min.js'))
+    .pipe($.concat('index.min.js'))
     // .pipe($.uglify())
     .pipe(gulp.dest(root.src+'js/'));
 });
