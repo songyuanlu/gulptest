@@ -5,22 +5,13 @@
  */
 /** var */
 /**
- * 公用变量
- * @author	HuiminPan(潘慧敏)
+ * 定义公用变量
+ * @by songyunalu
  */
 /*-- 基础颜色规范（以颜色值命名） --*/
 /* 灰色 */
-/* 浅灰色 */
-/* 灰绿 */
-/* 绿色 */
-/* 红色 */
 /* 红色1 */
-/* 灰色1 */
-/* 灰色边线 */
-/* 灰色文字 */
-/* 灰色文字 */
-/* 橙色ff9e4f */
-/*-- 颜色值具体使用场景：color-使用的元素-使用的场景，如color-input-hover --*/
+/*-- 颜色值具体使用场景：c-使用的元素-使用的场景，如c-input-hover --*/
 /*链接*/
 /*--字体--*/
 /*--图片地址--*/
@@ -31,166 +22,9 @@ body {
   background: orange;
 }
 /** 详情 */
-/*--发布活动--*/
-.gui-radio {
-  display: inline-block;
-  vertical-align: middle;
-  width: 14px;
-  height: 14px;
-  padding: 2px;
-  border: 1px solid #a1a1a1;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
+.detail {
+  background: url('@sprite-img/release-icons/address.png');
 }
-.gui-radio > p {
-  display: inline-block;
-  vertical-align: top;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-}
-.gui-radio[checked="checked"] > p {
-  background-color: #ff544f;
-}
-.gui-radio input[type="radio"] {
-  display: none;
-  opacity: 0;
-}
-.gui-radio input[type="radio"]:checked + p {
-  background-color: #ff544f;
-}
-.gui-r-checkbox {
-  height: 36px;
-  line-height: 34px;
-  text-align: center;
-  font-size: 14px;
-  border-radius: 17px;
-  color: #a1a1a1;
-  border: 1px solid #a1a1a1;
-  position: relative;
-}
-.gui-r-checkbox p {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-.gui-r-checkbox i {
-  display: none;
-  position: absolute;
-  left: 6px;
-  top: -8px;
-  width: 16px;
-  height: 16px;
-  background-image: url('../images/sprites/release-icons/checkbox.png');
-  background-repeat: no-repeat;
-}
-.gui-r-checkbox[checked="checked"] {
-  color: #ff544f;
-  border: 1px solid #ff544f;
-}
-.gui-r-checkbox[checked="checked"] i {
-  display: inline-block;
-}
-[class^="icons-r-"] {
-  display: inline-block;
-  vertical-align: middle;
-  width: 20px;
-  height: 20px;
-  background-repeat: no-repeat;
-}
-.icons-r-address {
-  background-image: url('../images/sprites/release-icons/address.png');
-}
-.pg-release {
-  top: 0;
-  padding-top: 48px;
-  bottom: 0;
-  background-color: #fff;
-}
-.pg-release .release-con {
-  background: #f2f2f2;
-}
-.pg-release [class^="icons-r-"] {
-  margin-right: 6px;
-}
-.pg-release.pg-release-pt0 {
-  padding-top: 0;
-}
-.pg-release.pg-release-gray {
-  background-color: #f2f2f2;
-}
-.form-title {
-  padding: 6px 20px 0;
-  font-size: 14px;
-  line-height: 36px;
-  color: #a1a1a1;
-}
-.release-form {
-  border-top: 1px solid #eaeaea;
-  border-bottom: 1px solid #eaeaea;
-  background-color: #fff;
-  line-height: 46px;
-  font-size: 14px;
-}
-.release-form li,
-.release-form .list {
-  border-bottom: 1px solid #eaeaea;
-}
-.release-form li:last-child,
-.release-form .list:last-child {
-  border-bottom: none;
-}
-.release-form a,
-.release-form label {
-  display: block;
-  padding: 0 20px;
-  color: #a1a1a1;
-}
-.release-form .list-text {
-  padding: 10px 20px;
-  line-height: 150%;
-}
-.release-form .list-text label {
-  float: left;
-  width: 50%;
-  padding: 0;
-}
-.release-form .dt {
-  float: left;
-}
-.release-form .dd {
-  float: right;
-}
-.release-form .dd > p {
-  padding: 12px 0;
-  line-height: 22px;
-}
-.chcekbox-list {
-  padding: 15px 8px 0;
-}
-.chcekbox-list li {
-  float: left;
-  padding: 10px 5px;
-}
-.chcekbox-list.list-4 li {
-  width: 25%;
-}
-.chcekbox-list.list-2 li {
-  width: 50%;
-  padding: 10px;
-}
-.add-checkbox {
-  padding: 10px 8px;
-}
-.add-checkbox p {
-  display: inline-block;
-  height: 36px;
-  line-height: 34px;
-  text-align: center;
-  font-size: 14px;
-  border-radius: 17px;
-  padding: 0 16px;
-  color: #a1a1a1;
-  border: 1px dashed #a1a1a1;
+.detail1 {
+  background: url('@sprite-img/release-icons/address.png');
 }
