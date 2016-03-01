@@ -169,7 +169,6 @@ gulp.task('default', function () {
         .pipe(gulp.dest('dist'));
 });
 
-
 gulp.task('jsBuild', function () {
     gulp.src(root.src+'js/**/*.js')
     .pipe($.amdOptimize('index', {
