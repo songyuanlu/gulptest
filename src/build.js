@@ -4,13 +4,15 @@
     dir: '../dest',
     paths: {
         jquery: 'empty:',
-        wx: 'empty:'
+        wx: 'empty:',
+        header: 'units/header'
     },
     optimizeCss: 'none',
+    // fileExclusionRegExp: 
     modules: [
         {
-            name: "main"
+            name: 'main'
         }
     ]
 })
-//node r.js -o build.js
+

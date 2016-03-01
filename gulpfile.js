@@ -169,12 +169,16 @@ gulp.task('default', function () {
         .pipe(gulp.dest('dist'));
 });
 
-gulp.task('scripts', function () {
- 
-  return gulp.src(root.src+'js/**/*.js')
-    // Traces all modules and outputs them in the correct order. 
-    .pipe($.amdOptimize("main"))
-    .pipe(concat("main.js"))
-    .pipe(gulp.dest("dist/scripts"));
- 
+
+gulp.task('bundle', function () {
+    gulp.src(root.src+'js/**/*.js')
+    .pipe($.amdOptimize('main/main', {
+        configFile: root.src+'js/require.config.js',
+        exclude: ['jquery']
+        // findNestedDependencies: true,
+        // include: false
+    }))
+    .pipe($.concat('main/main.min.js'))
+    // .pipe($.uglify())
+    .pipe(gulp.dest(root.src+'js/'));
 });

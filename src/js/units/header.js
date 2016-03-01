@@ -24,3 +24,21 @@ define(function (){
 		add: add
 	};
 });
+
+/*good*/ 
+function Fntest(name){
+	this.name = name;
+}
+/*bad*/
+function Fntest(name){
+  this.name = name;
+}
+
+/*good*/
+var a = 0,
+	b = 1,
+	c = 2;
+/*bad*/
+var a = 0;
+
+
