@@ -13,19 +13,19 @@ require(['require.config'], function() {
 		//调用校验
 		console.log(new RegExp(vdate.vRules.username).test('fdsa'))
 		
-		
 		//调用cookie
 		var userInfor = {
 			'name': 'song',
 			'age': 26,
 			'job': 'web'
 		}
+
 		// $.cookie('userInfor', JSON.stringify(userInfor));//设置cookie
 		$.cookie('userInfor', JSON.stringify(userInfor), {
             expires: 3//设置日期
         });
+
 		// $.removeCookie('userInfor');//删除Cooki
 		console.log(JSON.parse($.cookie('userInfor')))
-
 	})
 })

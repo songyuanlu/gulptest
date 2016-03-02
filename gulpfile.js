@@ -9,7 +9,7 @@ var $ = require('gulp-load-plugins')({
 var browserSync = require('browser-sync').create();
 
 var root = {
-	src: './src/',
+	src: './dist/',
 	dest: './dest/'
 };
 

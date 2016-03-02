@@ -7,6 +7,9 @@
     modules: [
         {
             name: 'test'
+        },
+        {
+            name: 'account/register'
         }
     ]
 }
