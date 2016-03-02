@@ -1,1 +1,0 @@
-require(["../require.config"],function(){require(["jquery","wx","header"],function(e,t,n){e("#abc").html("sfs"),console.log(n.add(1,1));var r=new n.Fntest("song","web",27);r.init()})});
