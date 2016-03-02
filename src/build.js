@@ -6,7 +6,7 @@
     removeCombined: true,
     modules: [
         {
-            name: 'index'
+            name: 'test'
         }
     ]
 }

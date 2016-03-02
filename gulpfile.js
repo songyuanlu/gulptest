@@ -171,13 +171,13 @@ gulp.task('default', function () {
 
 gulp.task('jsBuild', function () {
     gulp.src(root.src+'js/**/*.js')
-    .pipe($.amdOptimize('index', {
+    .pipe($.amdOptimize('test', {
         configFile: root.src+'js/require.config.js',
         exclude: ['jquery'],
         // findNestedDependencies: true,
         include: ['header']
     }))
-    .pipe($.concat('index.min.js'))
+    .pipe($.concat('test.min.js'))
     // .pipe($.uglify())
     .pipe(gulp.dest(root.src+'js/'));
 });
