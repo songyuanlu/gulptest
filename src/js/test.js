@@ -1,6 +1,6 @@
 require(['require.config'], function() {
 
-	require(['jquery', 'wx', 'header', 'cookie', 'validate'], function($, wx, header, cookie, validate){
+	require(['jquery', 'wx', 'header', 'cookie', 'vdate'], function($, wx, header, cookie, vdate){
 		$('#abc').html('sfs')
 
 		//调用header模块的add
@@ -11,7 +11,7 @@ require(['require.config'], function() {
 		fnTest.init()
 
 		//调用校验
-		console.log(new RegExp(validate.vRules.username).test('fdsa'))
+		console.log(new RegExp(vdate.vRules.username).test('fdsa'))
 		
 		
 		//调用cookie

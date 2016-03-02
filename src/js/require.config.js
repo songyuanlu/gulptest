@@ -1,10 +1,12 @@
+var baseUrl = 'http://localhost:2222/js'
 require.config({
-	baseUrl: '../js',
+	baseUrl: baseUrl,
 	paths: {
 		'jquery': 'lib/jquery/1.12.1/jquery',
 		'wx': 'lib/weixin/1.0.0/jweixin',
-		'cookie': 'lib/jquery/cookie/jquery.cookie',
+		'cookie': 'plugins/cookie/jquery.cookie',
+		'validate': 'plugins/validate/jquery.validate.min',
 		'header': 'units/header',
-		'validate': 'units/validate'
+		'vdate': 'units/vdate'
 	}
 });
