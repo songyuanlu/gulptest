@@ -1,0 +1,1 @@
+define([],function(){function t(e,t,n){this.name=e,this.job=t,this.age=n}var e=function(e,t){return e+t};return t.prototype={constructor:t,init:function(){var e=this;e.sayName()},sayName:function(){var e=this;console.log(e.name)}},{Fntest:t,add:e}});

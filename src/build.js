@@ -1,6 +1,6 @@
 {
     baseUrl: 'js',
-    dir: '../dist/js',
+    dir: '../dest/js',
     optimize: 'uglify',
     mainConfigFile: 'js/require.config.js',
     removeCombined: true,
