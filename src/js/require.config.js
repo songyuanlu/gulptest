@@ -1,5 +1,6 @@
+var path = 'http://localhost:2222';
 require.config({
-	baseUrl: 'http://localhost:2222/js',
+	baseUrl: path+'/js',
 	paths: {
 		'jquery': 'lib/jquery/1.12.1/jquery',
 		'wx': 'lib/weixin/1.0.0/jweixin',

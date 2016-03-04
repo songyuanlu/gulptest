@@ -1,5 +1,17 @@
-require(['../require.config'], function() {
-	require(['jquery', 'cookie', 'validate'], function($, cookie, validate){
+var path = 'http://localhost:2222';
+require.config({
+	baseUrl: path+'/js',
+	paths: {
+		'jquery': 'lib/jquery/1.12.1/jquery',
+		'wx': 'lib/weixin/1.0.0/jweixin',
+		'cookie': 'plugins/cookie/jquery.cookie',
+		'validate': 'plugins/validate/jquery.validate.min',
+		'header': 'units/header',
+		'vdate': 'units/vdate'
+	}
+});
+
+require(['jquery', 'cookie', 'validate', 'vdate'], function($, cookie, validate, vdate){
 
 		var register = {
 			// _name: $('input[name="name"]'),
@@ -7,6 +19,8 @@ require(['../require.config'], function() {
 			init: function(){
 				var me = this;
 				me.vation();
+				$.cookie('username', 'song');
+				console.log($.cookie('username'))
 			},
 			vation: function(){
 				var me = this;
@@ -70,4 +84,3 @@ require(['../require.config'], function() {
 		}
 		register.init();
 	});
-});

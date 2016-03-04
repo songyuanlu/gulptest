@@ -30,5 +30,5 @@ test.js
 
 account/register.js
 ----------------
-require.config.js
+units/vdate.js
 account/register.js
