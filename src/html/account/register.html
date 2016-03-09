@@ -3,43 +3,101 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="keywords" content="淘猪宝">
-    <meta name="description" content="淘猪宝">
     <title>注册</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="../../css/public.css"/>
+    <link rel="stylesheet" href="../../css/account.css"/>
 </head>
 <body>
-	<form id="register" method="get" action="">
-		<fieldset>
-			<legend>验证完整的表单</legend>
-			<p>
-				<label for="shopName">店铺名称</label>
-				<input id="shopName" name="shopName" type="text">
-			</p>
-			<p>
-				<label for="lastname">姓氏</label>
-				<input id="lastname" name="lastname" type="text">
-			</p>
-			<p>
-				<label for="username">用户名</label>
-				<input id="username" name="username" type="text">
-			</p>
-			<p>
-				<label for="password">密码</label>
-				<input id="password" name="password" type="password">
-			</p>
-			<p>
-				<label for="confirm_password">验证密码</label>
-				<input id="confirm_password" name="confirm_password" type="password">
-			</p>
-			<p>
-				<label for="email">Email</label>
-				<input id="email" name="email" type="email">
-			</p>
-			<p>
-				<input class="submit" type="submit" value="提交">
-			</p>
-		</fieldset>
-	</form>
+<div class="userName-logo">
+    <img src="../../images/logo.png" alt=""/>
+</div>
+<div class="register-tab fn-c" id="tab">
+    <span class="tab on" data-type="personal">个人用户注册</span>
+    <span class="tab" data-type="shop">店铺注册</span>
+</div>
+<div id="user-page">
+    <div class="user-page-logo">
+        会员
+    </div>
+    <form id="register" method="get">
+        <ul class="user-page-text">
+            <li class="user-page-text-l1" style="display: none">
+                <div class="li-text">
+                    <span class="pink">*</span>
+                    店铺名称：
+                </div>
+                <div class="li-input">
+                    <input type="text" class="l2-in1" id="shopName" name="shopName">
+                </div>
+                <div class="li-explain"></div>
+            </li>
+            <li class="user-page-text-l2">
+                <div class="li-text">
+                    <span class="pink">*</span>
+                    手机号：
+                </div>
+                <div  class="li-input">
+                    <input type="text" class="l2-in1" id="tel" name="tel">
+                    <img src="../../images/renw.png"/>
+                </div>
+                <div  class="li-explain"></div>
+            </li>
+            <li class="user-page-text-l3">
+                <div class="li-text">
+                    <span class="pink">*</span>
+                    验证码：
+                </div>
+                <div  class="li-input">
+                    <input type="text" class="l2-in2" id="code" name="code">
+                    <a href="#"><span class="l2-in2-s">获取验证码</span></a>
+                </div>
+                <div  class="li-explain lh34"></div>
+            </li>
+            <li class="user-page-text-l4" style="display: none">
+                <div class="li-text">
+                    推荐码：
+                </div>
+                <div  class="li-input">
+                    <input type="text" class="l2-in2" id="rec" name="rec">
+                </div>
+                <div  class="li-explain lh34"></div>
+            </li>
+            <li class="user-page-text-l5">
+                <div class="li-text">
+                    <span class="pink">*</span>
+                    密码：
+                </div>
+                <div  class="li-input">
+                    <input type="text" class="l2-in3" id="password" name="password">
+                    <img src="../../images/suo.png"/>
+                </div>
+                <div  class="li-explain lh34"></div>
+            </li>
+            <li class="user-page-text-l6">
+                <div class="li-text">
+                    <span class="pink">*</span>
+                    确认密码：
+                </div>
+                <div  class="li-input">
+                    <input type="text" class="l2-in4" id="confirm_password" name="confirm_password">
+                    <img src="../../images/suo.png"/>
+                </div>
+                <div  class="li-explain lh34"></div>
+            </li>
+            <li class="user-page-text-l7">
+                <div class="li-text"></div>
+                <div  class="li-input">
+                     <!-- <span class="user-page-btn">确认注册</span> -->
+                     <input class="user-page-btn" type="submit" value="提交">
+                </div>
+            </li>
+        </ul>
+    </form>  
+</div>
 </body>
-	<script src="../../js/require.js" defer async="true" data-main="../../js//account/register.js"></script>
+    <script src="../../js/require.js"></script>
+    <script src="../../js/require.config.js"></script>
+    <script src="../../js/account/register.js"></script>
 </html>

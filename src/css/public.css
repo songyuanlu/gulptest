@@ -9,10 +9,6 @@
  * @by songyunalu
  */
 /*-- 基础颜色规范（以颜色值命名） --*/
-/* 灰色 */
-/* 红色1 */
-/*-- 颜色值具体使用场景：c-使用的元素-使用的场景，如c-input-hover --*/
-/*链接*/
 /*--字体--*/
 /*--图片地址--*/
 /*--media--*/
@@ -45,11 +41,9 @@ ol {
 }
 a {
   text-decoration: none;
+  color: inherit;
 }
-fieldset,
-img,
-button,
-input {
+img {
   border: 0;
 }
 button,
@@ -57,10 +51,6 @@ input,
 select,
 textarea {
   font-size: inherit;
-}
-input {
-  -webkit-appearance: none;
-  border-radius: 0;
 }
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
@@ -112,202 +102,19 @@ a {
   text-align: right;
 }
 /*********************************************/
-/**rest web*******************************************/
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  word-wrap: break-word;
-}
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section,
-iframe {
-  display: block;
-}
-html,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-button,
-input,
-select,
-textarea {
-  font-size: 625%;
-}
-@media screen and (min-width: 321px) and (max-width: 375px) {
-  html,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  button,
-  input,
-  select,
-  textarea {
-    font-size: 734.4%;
-  }
-}
-@media screen and (min-width: 376px) and (max-width: 639px) {
-  html,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  button,
-  input,
-  select,
-  textarea {
-    font-size: 808.6%;
-  }
-}
-@media screen and (min-width: 640px) {
-  html,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  button,
-  input,
-  select,
-  textarea {
-    font-size: 1250%;
-  }
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-address,
-cite,
-dfn,
-em,
-var,
-i {
-  font-style: normal;
-}
-ul,
-ol {
-  list-style: none;
-}
-a {
-  text-decoration: none;
-}
-fieldset,
-img,
-button,
-input {
-  border: 0;
-}
-button,
-input,
-select,
-textarea {
-  font-size: inherit;
-}
-input {
-  -webkit-appearance: none;
-  border-radius: 0;
-}
-input::-webkit-input-placeholder,
-textarea::-webkit-input-placeholder {
-  color: #bbb;
-}
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-  -webkit-appearance: none !important;
-  margin: 0;
-}
-html {
-  height: 100%;
-  overflow: hidden;
-}
-body {
-  font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
-  min-width: 320px;
-  height: 100%;
-  position: relative;
-  font-size: 0.12rem;
-  color: #333;
-  background-color: #eeefef;
-  overflow: hidden;
-  overflow-y: auto;
-  -webkit-text-size-adjust: none;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  -webkit-font-smoothing: subpixel-antialiased;
-  -webkit-touch-callout: none;
-  -webkit-overflow-scrolling: touch;
-}
-a {
-  color: #666;
-  text-decoration: none;
-}
-:focus {
-  outline: 0;
-}
-.fn-c:after {
-  content: "";
-  display: block;
-  height: 0;
-  clear: both;
-  visibility: hidden;
-}
-.fn-l {
-  float: left;
-}
-.fn-r {
-  float: right;
-}
-.fn-oyh {
-  overflow-y: hidden!important;
-}
-.fn-hide {
-  display: none!important;
-}
-.fn-show {
-  display: block!important;
-}
-.tac {
-  text-align: center;
-}
-.tal {
-  text-align: left;
-}
-.tar {
-  text-align: right;
-}
-/***************************************/
 /** 页面整体布局及全局基础样式 */
 /**
  * 定义布局样式
  * @by songyunalu
  */
-.ui-view {
-  width: 100px;
-}
 /** 公共UI样式 */
 /**
  * 定义公用样式,如loading mask
  * @by songyunalu
  */
+.ui-loading {
+  background-color: red;
+}
 /** 公共头样式 */
 /**
  * 定义头样式
@@ -318,7 +125,3 @@ a {
  * 定义底部样式，
  * @by songyunalu
  */
-.ui-footer {
-  background: #fff;
-  background: red;
-}

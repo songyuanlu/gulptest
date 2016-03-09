@@ -10,7 +10,8 @@ var browserSync = require('browser-sync').create();
 
 var root = {
 	src: './src/',
-	dest: './dest/'
+	dest: './dest/',
+    build: './build/'
 };
 
 /* @实时任务------------------------------------------------------------------------*/
@@ -170,7 +171,7 @@ gulp.task('default', function () {
 });
 
 gulp.task('jsBuild', function () {
-    gulp.src(root.src+'js/**/*.js')
+    gulp.src(root.src+'js/test/*.js')
     .pipe($.amdOptimize('test', {
         configFile: root.src+'js/require.config.js',
         exclude: ['jquery'],
@@ -179,5 +180,5 @@ gulp.task('jsBuild', function () {
     }))
     .pipe($.concat('test.min.js'))
     // .pipe($.uglify())
-    .pipe(gulp.dest(root.src+'js/'));
+    .pipe(gulp.dest(root.src+'jsBuild/'));
 });

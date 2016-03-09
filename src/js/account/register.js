@@ -1,86 +1,130 @@
-var path = 'http://localhost:2222';
-require.config({
-	baseUrl: path+'/js',
-	paths: {
-		'jquery': 'lib/jquery/1.12.1/jquery',
-		'wx': 'lib/weixin/1.0.0/jweixin',
-		'cookie': 'plugins/cookie/jquery.cookie',
-		'validate': 'plugins/validate/jquery.validate.min',
-		'header': 'units/header',
-		'vdate': 'units/vdate'
-	}
-});
-
-require(['jquery', 'cookie', 'validate', 'vdate'], function($, cookie, validate, vdate){
-
-		var register = {
-			// _name: $('input[name="name"]'),
-			// _nameVal: '',
-			init: function(){
-				var me = this;
-				me.vation();
-				$.cookie('username', 'song');
-				console.log($.cookie('username'))
-			},
-			vation: function(){
-				var me = this;
-				$("#register").validate({
-				    rules: {
-						shopName: {
-							required: true,
-							minlength: 1,
-							maxlength: 20,
-						},
-						lastname: "required",
-						username: {
-							required: true,
-							minlength: 2
-						},
-						password: {
-							required: true,
-							minlength: 5
-						},
-						confirm_password: {
-							required: true,
-							minlength: 5,
-							equalTo: "#password"
-						},
-						email: {
-							required: true,
-							email: true
-						}
-					},
-					messages: {
-						shopName: {
-							required: "请输入店铺名称",
-							minlength: "请输入1~20个字符",
-							maxlength: "请输入1~20个字符"
-						},
-						lastname: "请输入您的姓氏",
-						username: {
-							required: "请输入用户名",
-							minlength: "用户名必需由两个字母组成"
-						},
-						password: {
-							required: "请输入密码",
-							minlength: "密码长度不能小于 5 个字母"
-						},
-						confirm_password: {
-							required: "请输入密码",
-							minlength: "密码长度不能小于 5 个字母",
-							equalTo: "两次密码输入不一致"
-						},
-						email: "请输入一个正确的邮箱"
+require(['jquery', 'cookie', 'validate'], function($, cookie, validate){
+	var register = {
+		type: 'personal',
+		_form: $('#register'),
+		vFrom: '',
+		//初始化
+		init: function(){
+			var me = this;
+			me.attrs();
+			me.tab();
+			me.vation();
+		},
+		//属性设置
+		attrs: function(){
+			var me = this;
+			me._shopName = $('#shopName');
+			me._rec = $('#rec');
+		},
+		//切换注册
+		tab: function(){
+			var me = this;
+			var _switch = $('#tab');
+			_switch.on('click', '.tab', function(e) {
+				var that = $(this);
+				if (!that.hasClass('on')) {
+					that.siblings('.on').removeClass('on')
+					that.addClass('on');
+					me.type = that.attr('data-type');
+					me.switchRules(me.type);
+				}else{
+					return;
+				}
+			});
+		},
+		//切换验证规则
+		switchRules: function(type){
+			var me = this;
+			if (type == 'personal') {
+				me._shopName.parents('li').hide();
+				me._rec.parents('li').hide();
+				me._shopName.rules('remove');
+				me._rec.rules('remove');
+			}else if(type == 'shop'){
+				me._shopName.parents('li').show();
+				me._rec.parents('li').show();
+				me._shopName.rules('add', {
+					required: true,
+					rangelength: [1,20],
+					messages: { 
+						required: '请输入店铺名称',
+						rangelength: '请输入1~20个字符'
 					}
 				});
-			},
-			events: function(){
-				var me = this;
-
-				// $('#register').submit(function(e) {
-			
-				// });
+				me._rec.rules('add', {
+					minlength: 6,
+					maxlength: 6,
+					messages: { 
+						minlength: '请输入6位推荐码',
+						maxlength: '请输入6位推荐码'
+					}
+				});
 			}
+			me.vFrom.resetForm()
+		},
+		//验证
+		vation: function(){
+			var me = this;
+			me.vFrom = me._form.validate({
+				onkeyup: false,
+				errorPlacement: function(error, element) {
+					$(element).parents('.li-input').next('.li-explain')
+						.append(error);
+				},
+			    rules: {
+					tel: {
+						required: true,
+						minlength: 11,
+						maxlength: 11,
+					},
+					code: {
+						required: true,
+						minlength: 4,
+						maxlength: 4
+					},
+					password: {
+						required: true,
+						rangelength: [6,16]
+					},
+					confirm_password: {
+						required: true,
+						rangelength: [6,16],
+						equalTo: '#password'
+					}
+				},
+				messages: {
+					tel: {
+						required: '请输入手机号',
+						minlength: '请输入正确有效的手机号',
+						maxlength: '请输入正确有效的手机号',
+					},
+					code: {
+						required: '请输入验证码',
+						minlength: '验证码错误',
+						maxlength: '验证码错误'
+					},
+					password: {
+						required: '请输入密码',
+						rangelength: '请输入6-16位密码'
+					},
+					confirm_password: {
+						required: '请再次输入密码',
+						rangelength: '请输入6-16位密码',
+						equalTo: '两次密码输入不一致'
+					}
+				},
+		        submitHandler: function() { 
+					console.log(me._form.serialize()) 
+				}
+			});
+		},
+		//事件
+		events: function(){
+			var me = this;
+			// $('#register').submit(function(e) {
+			
+			// });
 		}
-		register.init();
-	});
+	}
+	register.init();
+});

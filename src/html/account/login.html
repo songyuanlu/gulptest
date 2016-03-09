@@ -3,19 +3,39 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="keywords" content="xx">
-    <meta name="description" content="xx">
-    <title>注册</title>
+    <title>登录</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="../../css/public.css"/>
+    <link rel="stylesheet" href="../../css/account.css"/>
 </head>
 <body>
-     
-    <p>店铺名称：<input name="name" type="text"></p>     
-	<p>手机号：<input type="text"></p>
-	<p>验证码：<input type="text"></p>
-	<p>推荐号：<input type="text"></p>
-	<p>密码：<input type="password"></p>
-	<p>确认密码：<input type="password"></p>
-
+    <div class="userName-logo">
+        <img src="../../images/logo.png" alt=""/>
+        <div class="logo-images-d fn-c">
+            <div class="login-div fn-c">
+                <span class="login-div-s1">会员</span>
+                <a href="#"><span class="login-div-s2">免费注册</span></a>
+                <div class="login-div-ts fn-c">
+                    <img src="../../images/error.png"/>
+                    <p id="tips">账户名与密码不匹配，请重新输入</p>
+                </div>
+                <input type="text" id="name" class="login-in1" placeholder="账号" maxlength="11">
+                <input type="password" id="password" class="login-in2" placeholder="密码">
+                <a href="#"><span class="login-div-s3">忘记登录密码</span></a>
+                <span class="login-div-s4">
+                    <input type="checkbox"/>
+                    三天内自动登录
+                </span>
+                <div class="denglu" type="submit" id="submit">登录</div>
+            </div>
+        </div>
+    </div>
+    <div class="login-bg">
+        <img src="../../images/bg.png"/>
+    </div>
 </body>
-	<script src="../../js/require.js" defer async="true" data-main="../../js/test.js"></script>
+    <script src="../../js/require.js"></script>
+    <script src="../../js/require.config.js"></script>
+    <script src="../../js/account/login.js"></script>
 </html>

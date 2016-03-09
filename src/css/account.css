@@ -1,0 +1,325 @@
+@charset "utf-8";
+/**
+ * 最终汇总模块单元样式-首页
+ * @author	Panny(songyuanlu)
+ */
+/** var */
+/**
+ * 定义公用变量
+ * @by songyunalu
+ */
+/*-- 基础颜色规范（以颜色值命名） --*/
+/*--字体--*/
+/*--图片地址--*/
+/*--media--*/
+/*--z-index--*/
+/** 样式 */
+.pink {
+  color: #f48789;
+}
+input:focus {
+  outline: none;
+  border: 2px solid #c8a062;
+}
+/*******************ע��******************************/
+.userName-logo {
+  width: 1200px;
+  height: 66px;
+  margin: 30px auto;
+  position: relative;
+}
+.userName-logo .logo-images-d {
+  width: 1200px;
+  height: 500px;
+  border: 1px solid transparent;
+  position: absolute;
+  top: 110px;
+  left: 0;
+}
+.userName-logo .logo-images-d .login-div {
+  width: 430px;
+  height: 360px;
+  border: 14px solid #c8a062;
+  background: #ffffff;
+  position: absolute;
+  top: 40px;
+  right: 30px;
+  padding: 20px 35px;
+}
+.userName-logo .logo-images-d .login-div .login-div-s1 {
+  display: inline-block;
+  width: 120px;
+  height: 30px;
+  line-height: 30px;
+  text-align: left;
+  float: left;
+  font-size: 24px;
+}
+.userName-logo .logo-images-d .login-div .login-div-s2 {
+  display: inline-block;
+  width: 70px;
+  height: 20px;
+  line-height: 40px;
+  color: #f48789;
+  float: right;
+  text-align: right;
+}
+.userName-logo .logo-images-d .login-div .login-div-ts {
+  width: 426px;
+  height: 26px;
+  color: #f48789;
+  line-height: 26px;
+  border: 2px solid #f48789;
+  background: #ffe8e8;
+  margin: 40px auto 20px auto;
+}
+.userName-logo .logo-images-d .login-div .login-div-ts img {
+  display: inline-block;
+  float: left;
+  margin: 4px 10px 0 10px;
+}
+.userName-logo .logo-images-d .login-div .login-div-ts p {
+  display: inline-block;
+  float: left;
+}
+.userName-logo .logo-images-d .login-div .login-in1,
+.userName-logo .logo-images-d .login-div .login-in2 {
+  display: block;
+  width: 420px;
+  height: 60px;
+  outline: none;
+  background: #ffffff;
+  margin: 0 auto 20px auto;
+  font-size: 22px;
+  padding-left: 6px;
+}
+.userName-logo .logo-images-d .login-div .login-in1 {
+  border: 2px solid #cccccc;
+}
+.userName-logo .logo-images-d .login-div .login-in2 {
+  border: 2px solid #c8a062;
+}
+.userName-logo .logo-images-d .login-div .login-div-s3,
+.userName-logo .logo-images-d .login-div .login-div-s4 {
+  display: inline-block;
+  width: 130px;
+  height: 20px;
+  line-height: 20px;
+  color: #a8a8a8;
+  font-size: 16px;
+}
+.userName-logo .logo-images-d .login-div .denglu {
+  width: 426px;
+  height: 60px;
+  background: #c8a062;
+  color: #ffffff;
+  font-size: 26px;
+  text-align: center;
+  line-height: 60px;
+  cursor: pointer;
+  margin: 10px auto 0 auto;
+}
+.login-bg {
+  width: 100%;
+  height: 500px;
+  margin: 0 auto;
+}
+.login-bg img {
+  padding-top: 20px;
+  margin: 0 auto;
+}
+.register-tab {
+  width: 480px;
+  height: 40px;
+  margin: 0 auto;
+  font-size: 16px;
+  color: #fff;
+}
+.register-tab .tab {
+  display: inline-block;
+  float: left;
+  width: 240px;
+  height: 40px;
+  background: #cccccc;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+}
+.register-tab .tab.on {
+  background: #c8a062;
+}
+#user-page {
+  width: 1200px;
+  height: 750px;
+  margin: 0 auto;
+  border: 14px solid #c8a062;
+}
+#user-page .user-page-logo {
+  display: block;
+  width: 240px;
+  height: 40px;
+  margin-top: 25px;
+  font-size: 24px;
+  color: #000000;
+  text-align: right;
+  line-height: 40px;
+}
+#user-page .user-page-text {
+  display: block;
+  width: 700px;
+  min-height: 340px;
+  margin: 40px auto 0 auto;
+}
+#user-page .user-page-text .user-page-text-l1,
+#user-page .user-page-text .user-page-text-l2,
+#user-page .user-page-text .user-page-text-l3,
+#user-page .user-page-text .user-page-text-l4,
+#user-page .user-page-text .user-page-text-l5,
+#user-page .user-page-text .user-page-text-l6,
+#user-page .user-page-text .user-page-text-l7 {
+  height: 36px;
+  margin-bottom: 30px;
+}
+#user-page .user-page-text .user-page-text-l1 .user-page-btn,
+#user-page .user-page-text .user-page-text-l2 .user-page-btn,
+#user-page .user-page-text .user-page-text-l3 .user-page-btn,
+#user-page .user-page-text .user-page-text-l4 .user-page-btn,
+#user-page .user-page-text .user-page-text-l5 .user-page-btn,
+#user-page .user-page-text .user-page-text-l6 .user-page-btn,
+#user-page .user-page-text .user-page-text-l7 .user-page-btn {
+  display: inline-block;
+  width: 260px;
+  height: 36px;
+  text-align: center;
+  line-height: 36px;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  background: #c8a062;
+}
+#user-page .user-page-text .user-page-text-l1 .li-text,
+#user-page .user-page-text .user-page-text-l2 .li-text,
+#user-page .user-page-text .user-page-text-l3 .li-text,
+#user-page .user-page-text .user-page-text-l4 .li-text,
+#user-page .user-page-text .user-page-text-l5 .li-text,
+#user-page .user-page-text .user-page-text-l6 .li-text,
+#user-page .user-page-text .user-page-text-l7 .li-text {
+  display: inline-block;
+  float: left;
+  height: 36px;
+  line-height: 36px;
+  width: 110px;
+  text-align: right;
+}
+#user-page .user-page-text .user-page-text-l1 .li-input,
+#user-page .user-page-text .user-page-text-l2 .li-input,
+#user-page .user-page-text .user-page-text-l3 .li-input,
+#user-page .user-page-text .user-page-text-l4 .li-input,
+#user-page .user-page-text .user-page-text-l5 .li-input,
+#user-page .user-page-text .user-page-text-l6 .li-input,
+#user-page .user-page-text .user-page-text-l7 .li-input {
+  height: 36px;
+  width: 260px;
+  display: inline-block;
+  float: left;
+  position: relative;
+}
+#user-page .user-page-text .user-page-text-l1 .li-input img,
+#user-page .user-page-text .user-page-text-l2 .li-input img,
+#user-page .user-page-text .user-page-text-l3 .li-input img,
+#user-page .user-page-text .user-page-text-l4 .li-input img,
+#user-page .user-page-text .user-page-text-l5 .li-input img,
+#user-page .user-page-text .user-page-text-l6 .li-input img,
+#user-page .user-page-text .user-page-text-l7 .li-input img {
+  display: inline-block;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+#user-page .user-page-text .user-page-text-l1 .li-input .l2-in2,
+#user-page .user-page-text .user-page-text-l2 .li-input .l2-in2,
+#user-page .user-page-text .user-page-text-l3 .li-input .l2-in2,
+#user-page .user-page-text .user-page-text-l4 .li-input .l2-in2,
+#user-page .user-page-text .user-page-text-l5 .li-input .l2-in2,
+#user-page .user-page-text .user-page-text-l6 .li-input .l2-in2,
+#user-page .user-page-text .user-page-text-l7 .li-input .l2-in2 {
+  width: 120px;
+  height: 32px;
+}
+#user-page .user-page-text .user-page-text-l1 .li-input .l2-in2-s,
+#user-page .user-page-text .user-page-text-l2 .li-input .l2-in2-s,
+#user-page .user-page-text .user-page-text-l3 .li-input .l2-in2-s,
+#user-page .user-page-text .user-page-text-l4 .li-input .l2-in2-s,
+#user-page .user-page-text .user-page-text-l5 .li-input .l2-in2-s,
+#user-page .user-page-text .user-page-text-l6 .li-input .l2-in2-s,
+#user-page .user-page-text .user-page-text-l7 .li-input .l2-in2-s {
+  display: inline-block;
+  float: right;
+  width: 120px;
+  height: 40px;
+  line-height: 40px;
+  text-align: left;
+  color: #666666;
+}
+#user-page .user-page-text .user-page-text-l1 .li-input .l2-in1,
+#user-page .user-page-text .user-page-text-l2 .li-input .l2-in1,
+#user-page .user-page-text .user-page-text-l3 .li-input .l2-in1,
+#user-page .user-page-text .user-page-text-l4 .li-input .l2-in1,
+#user-page .user-page-text .user-page-text-l5 .li-input .l2-in1,
+#user-page .user-page-text .user-page-text-l6 .li-input .l2-in1,
+#user-page .user-page-text .user-page-text-l7 .li-input .l2-in1,
+#user-page .user-page-text .user-page-text-l1 .li-input .l2-in3,
+#user-page .user-page-text .user-page-text-l2 .li-input .l2-in3,
+#user-page .user-page-text .user-page-text-l3 .li-input .l2-in3,
+#user-page .user-page-text .user-page-text-l4 .li-input .l2-in3,
+#user-page .user-page-text .user-page-text-l5 .li-input .l2-in3,
+#user-page .user-page-text .user-page-text-l6 .li-input .l2-in3,
+#user-page .user-page-text .user-page-text-l7 .li-input .l2-in3,
+#user-page .user-page-text .user-page-text-l1 .li-input .l2-in4,
+#user-page .user-page-text .user-page-text-l2 .li-input .l2-in4,
+#user-page .user-page-text .user-page-text-l3 .li-input .l2-in4,
+#user-page .user-page-text .user-page-text-l4 .li-input .l2-in4,
+#user-page .user-page-text .user-page-text-l5 .li-input .l2-in4,
+#user-page .user-page-text .user-page-text-l6 .li-input .l2-in4,
+#user-page .user-page-text .user-page-text-l7 .li-input .l2-in4 {
+  width: 258px;
+  height: 32px;
+}
+#user-page .user-page-text .user-page-text-l1 .li-explain,
+#user-page .user-page-text .user-page-text-l2 .li-explain,
+#user-page .user-page-text .user-page-text-l3 .li-explain,
+#user-page .user-page-text .user-page-text-l4 .li-explain,
+#user-page .user-page-text .user-page-text-l5 .li-explain,
+#user-page .user-page-text .user-page-text-l6 .li-explain,
+#user-page .user-page-text .user-page-text-l7 .li-explain {
+  display: inline-block;
+  float: left;
+  margin-left: 10px;
+}
+#user-page .user-page-text .user-page-text-l1 label.error,
+#user-page .user-page-text .user-page-text-l2 label.error,
+#user-page .user-page-text .user-page-text-l3 label.error,
+#user-page .user-page-text .user-page-text-l4 label.error,
+#user-page .user-page-text .user-page-text-l5 label.error,
+#user-page .user-page-text .user-page-text-l6 label.error,
+#user-page .user-page-text .user-page-text-l7 label.error {
+  display: inline-block;
+  visibility: top;
+  width: 258px;
+  height: 34px;
+  color: #727272;
+  background: #f5f5f5;
+  border: 1px solid #cccccc;
+  font-size: 12px;
+  padding-left: 2px;
+}
+#user-page .user-page-text .user-page-text-l1 .lh34,
+#user-page .user-page-text .user-page-text-l2 .lh34,
+#user-page .user-page-text .user-page-text-l3 .lh34,
+#user-page .user-page-text .user-page-text-l4 .lh34,
+#user-page .user-page-text .user-page-text-l5 .lh34,
+#user-page .user-page-text .user-page-text-l6 .lh34,
+#user-page .user-page-text .user-page-text-l7 .lh34 {
+  line-height: 34px;
+}
