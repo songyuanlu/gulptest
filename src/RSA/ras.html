@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="RSA.js"></script>
+    <script type="text/javascript" src="BigInt.js"></script>
+    <script type="text/javascript" src="Barrett.js"></script>
+    <script src="jquery-1.12.0.min.js"></script>
+    <script type="text/javascript">
+        var exponent;
+        var modulus;
+        var id;
+        var key ;
+        $.get("http://localhost:8080/user/getRASKey", function(result){
+            exponent=result.data.exponent;
+            modulus=result.data.modulus;
+            id=result.data.id;
+            setMaxDigits(130);
+            rsalogin(exponent,modulus);
+        });
+        function rsalogin(exponent,modulus)
+        {
+            setMaxDigits(130);
+            key = new RSAKeyPair(exponent,"",modulus);
+            var result = encryptedString(key, encodeURIComponent("123456"));//需要md5
+            $.ajax({
+                url  :'http://localhost:8080/user/login1',
+                type : "POST",
+                data : '{"userName":"robert","pwd":"'+result+'","id":"'+id+'"}',
+                success : function(jdata) {
+                    alert(1);
+                },
+                dataType : "json",
+                contentType : "application/json;charset=utf-8",
+                error : function(jdata) {
+                    alert("error");
+                }
+            });
+        }
+    </script>
+</head>
+
+<body>
+
+
+</body>
+</html>
