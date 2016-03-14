@@ -1,0 +1,83 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+ul, li{
+	list-style: none
+}
+.emotion_wrp {
+    display: none;
+    position: absolute;
+    width: 421px;
+    top: 100%;
+    left: -1px;
+    top: 100px;
+}
+.hook {
+    position: absolute;
+    left: 21px;
+    top: 0;
+}
+.hook .hook_dec {
+    position: absolute;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 8px;
+}
+.hook .hook_top {
+    top: -16px;
+    border-color: transparent transparent #c0bfc5;
+}
+.hook .hook_btm {
+    top: -15px;
+    border-color: transparent transparent #f6f6f6;
+}
+.hook .hook_dec {
+    position: absolute;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 8px;
+}
+.emotions {
+    -moz-user-select: none;
+    overflow: hidden;
+    border-top: 1px solid #c0bfc5;
+    border-right: 1px solid #c0bfc5;
+    background-color: #e7e7eb;
+}
+.emotions_item {
+    float: left;
+    line-height: 27px;
+    height: 27px;
+    font-size: 0;
+    text-align: center;
+    width: 27px;
+    border-bottom: 1px solid #c0bfc5;
+    border-left: 1px solid #c0bfc5;
+    background-color: #fff;
+}
+.emotions_item i {
+    display: inline-block;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    background: transparent url(emoji/emoji.gif) no-repeat 0 0;
+}
+.emotions_preview {
+    position: absolute;
+    top: 0;
+    right: -81px;
+    display: block;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    font-size: 0;
+    text-align: center;
+    border: 1px solid #c0bfc5;
+    background-color: #fff;
+}
