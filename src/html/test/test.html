@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	#msgbox{
+		height: 200px;
+		border: 1px solid red;
+	}
+	</style>
+</head>
+<body>
+	
+	<div id="msgbox" contenteditable="true"></div> 
+</body>
+	<script src="../../js/lib/jquery/1.11.1/jquery.js"></script>
+	<script>
+	var test = document.getElementById('msgbox')
+	// test.addEventListener('change', function(){
+	//  alert('111');
+	// }, false);
+	// test.addEventListener('DOMCharacterDataModified', function(){
+	// 	alert('22');
+	// }, false);
+	// test.addEventListener('focus', function(){
+	// 	alert('content edited');
+	// }, false);
+	
+	// test.addEventListener('input', function(){
+	// 	alert('input');
+	// }, false);
+
+	// test.attachEvent("onpropertychange",function(e){
+	// 	alert('onpropertychange');
+	// }); 
+
+	$("#msgbox").focus(function(){
+		$("#msgbox").append("<p>Item Focused</p>")
+	});
+	$("#msgbox").blur(function(){
+		$("#msgbox").append("<li>Item lost focus</li>");
+	});
+	</script>
+</html>
