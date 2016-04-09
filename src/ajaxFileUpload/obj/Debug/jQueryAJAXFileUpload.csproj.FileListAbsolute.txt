@@ -1,5 +1,0 @@
-d:\360data\重要数据\我的文档\visual studio 2010\Projects\jQuery事件\jQuery事件\bin\jQuery事件.dll
-d:\360data\重要数据\我的文档\visual studio 2010\Projects\jQuery事件\jQuery事件\bin\jQuery事件.pdb
-d:\360data\重要数据\我的文档\visual studio 2010\Projects\jQuery事件\jQuery事件\obj\Debug\ResolveAssemblyReference.cache
-d:\360data\重要数据\我的文档\visual studio 2010\Projects\jQuery事件\jQuery事件\obj\Debug\jQuery事件.dll
-d:\360data\重要数据\我的文档\visual studio 2010\Projects\jQuery事件\jQuery事件\obj\Debug\jQuery事件.pdb

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <label class="btn-upload" for="fileupload"><input id="fileupload" type="file" name="file" multiple></label>
+
+</body>
+<script src="js/jquery.js"></script>
+<script src="js/jquery.ui.widget.js"></script>
+<script src="js/jquery.iframe-transport.js"></script>
+<script src="js/jquery.fileupload.js"></script>
+<script>
+    //上传
+    var Fileupload = function(pars){
+        this.type = pars.type || 'image'; //上传文件类型image;audio;
+        if (this.type == 'image') {
+            this.fileType = pars.fileType || 'bmp/png/jpeg/jpg/gif'; //bmp/png/jpeg/jpg/gif
+            this.fileSize = pars.fileSize || 2048; //文件大小传kb单位;默认2048kb;
+        }else if (this.type == 'audio') {
+            this.fileType = pars.fileType || 'mp3/wma/wav/amr'; //mp3/wma/wav/amr
+            this.fileSize = pars.fileSize || 5120; //文件大小默认5120kb;
+        };
+        this.fileTypeV = new RegExp('(.'+this.fileType.replace(/\//g,'|.')+')$');
+        this.ui = pars.ui;
+        this.uiInput = $('#'+pars.ui);
+        this.uiLabel =  this.uiInput.parent('label');
+        this.upType = pars.upType || 'get';
+        this.upUrlType = pars.upUrlType || '';
+        if (this.upUrlType == 'wechat') {
+            this.upUrl = '/api/pub/?action=file_upload';
+        }else{
+            this.upUrl = 'server/php/index.php';
+        }
+        this.done = pars.done;
+    }
+    Fileupload.prototype = {
+        constructor: Fileupload,
+        init: function(){
+            var self = this;
+            self.up();
+        },
+        up: function(){
+            var self = this;
+            self.uiInput.fileupload({
+                url: self.upUrl,
+                type: self.upType,
+                dataType: 'json',
+                formData: {
+                    userId: '111'
+                },
+                add: function (e, data) {
+                    var _file = data.files[0];
+                    if (!self.fileTypeV.test(_file.name)) {
+                        $('#'+self.ui+'-error').remove();
+                        self.uiLabel.append('<div class="fileupload-error" id="'+self.ui+'-error">请选择'+self.fileType+'格式的文件</div>');
+                        return;
+                    };
+                    
+                    if (/msie/.test(navigator.userAgent.toLowerCase())) {//如果是ie
+
+                    }else{
+                        if (self.fileSize*1024 < _file.size) {
+                            $('#'+self.ui+'-error').remove();
+                            self.uiLabel.append('<div class="fileupload-error" id="'+self.ui+'-error">文件大小不得大于'+self.fileSize+'kb</div>');
+                            return;
+                        };
+                    }
+                    $('#'+self.ui+'-error').remove();
+                    self.uiLabel.append('<div class="fileupload-progress" id="'+self.ui+'-progress"><div class="bar"></div></div>');
+                    data.submit();
+                },
+                done: function (e, data) {
+                    $('#'+self.ui+'-progress').remove();
+                    var _result = data.result;
+                    if (self.upUrlType == 'wechat') {
+                        if (_result.status == 1) {
+                            self.done(e,data);
+                        }else{
+                            self.uiLabel.append('<div class="fileupload-error" id="'+self.ui+'-error">'+_result.message+'</div>');
+                            setTimeout(function(){
+                                $('#'+self.ui+'-error').remove();
+                            },3000)
+                        }
+                    }else{
+                        self.done(e,data);
+                    }
+                },
+                progressall: function (e, data) {
+                    var progress = parseInt(data.loaded / data.total * 100, 10);
+                    $('#'+self.ui+'-progress .bar').css(
+                        'width', progress + '%'
+                    );
+                }
+            });
+        }
+    }
+
+    var upOk = function(e, data){
+        console.log(data.result)
+        for (ax in data.result) {
+            console.log(data.result[ax])
+        };
+    }
+    var upload = new Fileupload({
+        ui: 'fileupload',
+        done: upOk
+    })
+    upload.init();
+</script>
+</html>
