@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>上传文件</title>
 </head>
 <body>
     <label class="btn-upload" for="fileupload"><input id="fileupload" type="file" name="file" multiple></label>
@@ -53,6 +53,10 @@
                 },
                 add: function (e, data) {
                     var _file = data.files[0];
+                    /*for (ax in _file) {
+                        alert(ax)
+                        alert(_file[ax])
+                    };*/
                     if (!self.fileTypeV.test(_file.name)) {
                         $('#'+self.ui+'-error').remove();
                         self.uiLabel.append('<div class="fileupload-error" id="'+self.ui+'-error">请选择'+self.fileType+'格式的文件</div>');
