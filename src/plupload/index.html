@@ -24,7 +24,7 @@
 	<p class="tip2">注意：该demo把上传的地址设为了一个静态的html页面，所以文件并不会真正的上传到服务器，但这不会影响上传功能的演示！</p>
 	<div class="wraper">
 		<div class="btn-wraper">
-			<input type="button" value="选择文件..." id="browse" />
+			<input type="button" value="选择文件..." id="upload-input" />
 			<input type="button" value="开始上传" id="upload-btn" />
 		</div>
 		<ul id="file-list">
@@ -46,7 +46,7 @@
 	if (/msie/.test(navigator.userAgent.toLowerCase())) {//如果是ie
 
 		var uploader = new plupload.Uploader({ //实例化一个plupload上传对象
-			browse_button : 'browse',
+			browse_button : 'upload-input',
 			url : 'upload.html',
 			runtimes: 'flash',//,flash,silverlight,html4
 			flash_swf_url : 'js/Moxie.swf',
@@ -56,7 +56,7 @@
     }else{
         
         var uploader = new plupload.Uploader({ //实例化一个plupload上传对象
-			browse_button : 'browse',
+			browse_button : 'upload-input',
 			url : 'upload.html',
 			runtimes: 'html5',//,flash,silverlight,html4
 			// flash_swf_url : 'js/Moxie.swf',
@@ -71,8 +71,8 @@
 	uploader.bind('FilesAdded',function(uploader,files){
 
 		for (ax in files[0]) {
-			alert(ax)
-			alert(files[0][ax])
+			console.log(ax)
+			console.log(files[0][ax]);
 		};
 
 		for(var i = 0, len = files.length; i<len; i++){

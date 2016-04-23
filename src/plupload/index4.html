@@ -30,7 +30,7 @@
 			<input type="button" value="选择文件..." id="browse" />
 		</div>
 		<ul id="file-list">
-		
+
 		</ul>
 	</div>
 	<ul class="catalogue">
@@ -62,7 +62,7 @@
 			var html = '<li id="file-' + files[i].id +'"><p class="file-name">' + file_name + '</p><p class="progress"></p></li>';
 			$(html).appendTo('#file-list');
 			!function(i){
-				previewImage(files[i],function(imgsrc){
+				previewImage(files[i], function(imgsrc){
 					$('#file-'+files[i].id).append('<img src="'+ imgsrc +'" />');
 				})
 		    }(i);
